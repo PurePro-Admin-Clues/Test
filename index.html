@@ -1,67 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Password Clues</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body {
+      font-family: "Courier New", monospace;
+      background-color: #f1f1f1;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .box {
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 25px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .text {
+      text-align: center;
+      font-size: 24px;
+      color: #333333;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to the Secure Zone</h1>
-    <p>PUREPRO ADMIN PASSWORD HINTS DAILY</p>
-    <form>
-      <input type="password" placeholder="Name" id="passwordInput">
-      <button type="submit" id="submitButton">Submit</button>
-    </form>
-    <p class="clue">Hint: The password contains weird symbols;</p>
+    <div class="box">
+      <p class="text">Hello, World!</p>
+    </div>
   </div>
-</body>
-</html>
-<style>
-  body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 400px;
-  margin: 100px auto;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  color: #333333;
-}
-
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 3px;
-  border: 1px solid #cccccc;
-}
-
-button {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.clue {
-  text-align: center;
-  font-size: 14px;
-  color: #888888;
-  margin-top: 20px;
-}
-</style>
