@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Clues</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Secure Zone</h1>
+    <p>Please enter the password to access the secret information.</p>
+    <form>
+      <input type="password" placeholder="Password" id="passwordInput">
+      <button type="submit" id="submitButton">Submit</button>
+    </form>
+    <p class="clue">Hint: The password contains symbols @$:8;</p>
+  </div>
+</body>
+</html>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 400px;
+  margin: 100px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333333;
+}
+
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.clue {
+  text-align: center;
+  font-size: 14px;
+  color: #888888;
+  margin-top: 20px;
+}
+</style>
