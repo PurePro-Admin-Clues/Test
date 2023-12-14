@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    canvas {
+      background-color: #f1f1f1;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #000000;
+      touch-action: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const context = canvas.getContext("2d");
+
+    const ball = {
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+      radius: 10,
+      speed: 4,
+      dx: 4,
+      dy: -4
+    };
+
+    const paddle = {
+      width: 80,
+      height: 10,
+      x: canvas.width / 2 - 40,
+      y: canvas.height - 20,
+      speed: 8,
+      dx: 0
+    };
+
+    function drawBall() {
+      context.beginPath();
+      context.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+      context.fillStyle = "#000000";
+      context.fill();
+      context.closePath();
+    }
+
+    function drawPaddle() {
+      context.beginPath();
+      context.rect(paddle.x, paddle.y, paddle.width, paddle.height);
+      context.fillStyle = "#000000";
+      context.fill();
+      context.closePath();
+    }
+
+    function movePaddle() {
+      paddle.x += paddle.dx;
+
+      if (paddle.x < 0) {
+        paddle.x = 0;
+      } else if (paddle.x + paddle.width > canvas.width) {
+        paddle.x = canvas.width - paddle.width;
+      }
+    }
+
+    function moveBall() {
+      ball.x += ball.dx;
+      ball.y += ball.dy;
+
+      if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
+        ball.dx *= -1;
+      }
+
+      if (ball.y - ball.radius < 0) {
+        ball.dy *= -1;
+      } else if (ball.y + ball.radius > canvas.height) {
+        if (ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
+          ball.dy *= -1;
+        } else {
+          // Game over
+          alert("Game Over!");
